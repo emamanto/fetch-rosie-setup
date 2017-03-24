@@ -1,18 +1,23 @@
 This script installs everything you will need to run
-Rosie in the ROS environment with the Fetch. This includes:
+Rosie in the ROS environment with the Fetch.
 
-* ROS Indigo - Underlying communication system for
-  this framework. This must be the Indigo version
-  specifically!
+Requirements:
+* ROS Indigo - Install ROS Indigo according to these
+  instructions: http://wiki.ros.org/indigo/Installation/Ubuntu
+  Follow instructions for the Desktop-Full install
+* Rosie - Install according to instructions in the repo:
+  https://github.com/InstructoSoar/rosie-project
+
+This script will install:
 * MoveIt! - Motion planning framework that works with
   Fetch and ROS
+* Fetch software - Fetch description, model, and controllers
+  provided by Fetch Robotics
 * ROSbridge - Allows any software to communicate with ROS
   via JSON messages rather than using the Python or C++
   ROS interfaces
 * jrosbridge - Java client for ROSbridge used to connect
   Rosie and probcog software to ROS via ROSbridge
-* Fetch software - Fetch description, model, and controllers
-  provided by Fetch Robotics
 * Additional scripts and models for Fetch startup - I wrote
   some extra python scripts and environment files to set Fetch
   up at a table environment
@@ -20,4 +25,3 @@ Rosie in the ROS environment with the Fetch. This includes:
   created specifically for Rosie
 * rosie_motion package - Contains the motion server that takes
   Rosie's motion commands and translates them for ROS
-* Rosie (if not already installed)
