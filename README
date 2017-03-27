@@ -18,10 +18,9 @@ This script will install:
   ROS interfaces
 * jrosbridge - Java client for ROSbridge used to connect
   Rosie and probcog software to ROS via ROSbridge
-* Additional scripts and models for Fetch startup - I wrote
-  some extra python scripts and environment files to set Fetch
-  up at a table environment
 * rosie_msgs package - Contains definitions of all ROS messages
   created specifically for Rosie
 * rosie_motion package - Contains the motion server that takes
-  Rosie's motion commands and translates them for ROS
+  Rosie's motion commands and translates them for ROS plus
+  startup scripts that are my edited versions on the ones that
+  come in fetch_gazebo
