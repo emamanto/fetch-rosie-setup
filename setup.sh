@@ -9,7 +9,7 @@ else
     exit
 fi
 
-echo "Installing ROS packages..."
+echo "Installing ROS packages and maven..."
 sudo apt-get install ros-indigo-moveit ros-indigo-fetch-gazebo-demo \
     ros-indigo-rosbridge-server maven
 
