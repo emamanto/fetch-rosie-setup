@@ -4,6 +4,13 @@ echo "Checking for ROS Indigo..."
 if [ -d /opt/ros/indigo/ ]
 then
     echo "ROS directory found."
+    if [ $(which roslaunch) ]
+    then
+        echo "ROS setup seems to be working. Good to go!"
+    else
+        echo "Did you add ROS configuration to your .bashrc?"
+        exit
+    fi
 else
     echo "Have you installed ROS already?"
     exit
@@ -49,10 +56,12 @@ catkin_make
 if [ -e devel/setup.bash ]
 then
     source devel/setup.bash
-    echo "Catkin workspace initialized. Make sure the catkin_ws/src directory is found below:"
+    echo "Catkin workspace initialized. Make sure the catkin_ws/src directory is in the list below:"
     echo $ROS_PACKAGE_PATH
 else
     echo "Couldn't set up catkin workspace!"
+    exit
 fi
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 echo "Open a new terminal and run roslaunch rosie_motion rosie_motion.launch to see if things are working!"
