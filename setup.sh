@@ -32,7 +32,7 @@ else
 fi
 
 cd jrosbridge
-mvn install
+mvn clean package
 if [ -d target ]
 then
     echo "Built jrosbridge."
