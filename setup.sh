@@ -22,7 +22,7 @@ sudo apt-get install ros-indigo-moveit ros-indigo-fetch-gazebo-demo \
 
 echo "Cloning and building jrosbridge..."
 cd $ROSIE_PROJ
-git clone git@github.com:emamanto/jrosbridge.git
+git clone https://github.com:emamanto/jrosbridge.git
 if [ -d jrosbridge ]
 then
     echo "Cloned repo."
