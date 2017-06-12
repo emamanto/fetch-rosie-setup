@@ -22,7 +22,7 @@ sudo apt-get install ros-indigo-moveit ros-indigo-fetch-gazebo-demo \
 
 echo "Cloning and building jrosbridge..."
 cd $ROSIE_PROJ
-git clone https://github.com:emamanto/jrosbridge.git
+git clone https://github.com/emamanto/jrosbridge.git
 if [ -d jrosbridge ]
 then
     echo "Cloned repo."
@@ -48,8 +48,8 @@ echo "export CLASSPATH=$CLASSPATH:$ROSIE_PROJ/jrosbridge/target/jrosbridge-0.2.1
 echo "Creating catkin workspace..."
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-git clone git@github.com:emamanto/rosie_msgs.git
-git clone git@github.com:emamanto/rosie_motion.git
+git clone https://github.com/emamanto/rosie_msgs.git
+git clone https://github.com/emamanto/rosie_motion.git
 cd ..
 catkin_make
 
