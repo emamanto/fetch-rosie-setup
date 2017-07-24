@@ -16,9 +16,24 @@ else
     exit
 fi
 
+THIS_DIR=$(pwd)
+if [ -e kinematics.yaml ]
+then
+    echo "Found kinematics config file."
+else
+    echo "Please run this script from the fetch-rosie-setup directory."
+    exit
+fi
+
+roscd fetch_moveit_config
+cd config
+sudo cp kinematics.yaml kinematics.yaml.bkup
+sudo cp $THIS_DIR/kinematics.yaml kinematics.yaml
+
 echo "Installing ROS packages and maven..."
 sudo apt-get install ros-indigo-moveit ros-indigo-fetch-gazebo-demo \
-    ros-indigo-rosbridge-server maven
+    ros-indigo-rosbridge-server ros-indigo-trac-ik \
+    ros-indigo-trac-ik-kinematics-plugin maven
 
 echo "Cloning and building jrosbridge..."
 cd $ROSIE_PROJ
@@ -63,5 +78,6 @@ else
     exit
 fi
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
 
 echo "Open a new terminal and run roslaunch rosie_motion rosie_motion.launch to see if things are working!"
