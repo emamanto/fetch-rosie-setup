@@ -25,10 +25,6 @@ else
     exit
 fi
 
-roscd fetch_moveit_config
-cd config
-sudo cp kinematics.yaml kinematics.yaml.bkup
-sudo cp $THIS_DIR/kinematics.yaml kinematics.yaml
 
 echo "Installing ROS packages and maven..."
 sudo apt-get install ros-indigo-moveit ros-indigo-fetch-gazebo-demo \
@@ -79,5 +75,10 @@ else
 fi
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
+echo "Changing IK solver to TRAC_IK..."
+roscd fetch_moveit_config
+cd config
+sudo cp kinematics.yaml kinematics.yaml.bkup
+sudo cp $THIS_DIR/kinematics.yaml kinematics.yaml
 
 echo "Open a new terminal and run roslaunch rosie_motion rosie_motion.launch to see if things are working!"
